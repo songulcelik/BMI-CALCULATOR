@@ -3,7 +3,7 @@ const txtWeight = document.querySelector("#txtWeight");
 const txtHeight = document.querySelector("#txtHeight");
 const formGroupWeight = document.querySelector("#formGroupWeight");
 const formGroupHeight = document.querySelector("#formGroupHeight");
-function calculate() {
+function calculate(e) {
     
   // değerleri number a çevirerek al
   const weight = Number(txtWeight.value);
@@ -11,11 +11,11 @@ function calculate() {
   formGroupWeight.style.borderColor="rgb(159, 159, 159)";
   formGroupHeight.style.borderColor="rgb(159, 159, 159)";
   // değerleri kontrol et
-  if (!weight || weight <= 0 || weight > 500) {
+  if (e.target.id==="txtWeight" && (!weight || weight <= 0 || weight > 500)) {
     formGroupWeight.style.borderColor="red";
     return;
   }
-  else if (!height || height <= 0 || height > 300) {
+  if (e.target.id==="txtHeight" && (!height || height <= 0 || height > 300)) {
     formGroupHeight.style.borderColor="red";
     return;
   }
